@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
 	if (argc < 3)
 	{
-		puts("swap [row] [row]");
+		fputs("swap [row] [row]", stderr);
 		return 1;
 	}
 	matrix_t *m = loadmatrix();

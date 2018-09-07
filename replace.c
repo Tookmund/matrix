@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
 	if (argc < 4)
 	{
-		puts("replace [row] [factor] [row to add]");
+		fputs("replace [row] [factor] [row to add]", stderr);
 		return 1;
 	}
 	matrix_t *m = loadmatrix();

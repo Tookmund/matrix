@@ -7,8 +7,8 @@ matrix_t *loadmatrix(void)
 	FILE* f = fopen(MATRIXFILE, "r");
 	if (f == NULL)
 	{
-		puts("No current matrix found. Create one with newmatrix to get"
-				" started!");
+		fputs("No current matrix found. Create one with newmatrix to get"
+				" started!", stderr);
 		return NULL;
 	}
 	int r, c;
