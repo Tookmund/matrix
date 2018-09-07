@@ -9,7 +9,7 @@
 #include <fcntl.h>
 
 typedef struct {
-	char **m;
+	int **m;
 	int r;
 	int c;
 } matrix_t;
