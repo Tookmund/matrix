@@ -9,6 +9,14 @@ matrix_t *loadmatrix(void)
 	int r, c;
 	fscanf(f, "%d %d", &r, &c);
 	matrix_t *m = creatematrix(r, c);
+	for (int r = 0; r < m->r; r++)
+	{
+		for (int c = 0; c < m->c; c++)
+		{
+			fscanf(f, "%d", &(m->m[r][c]));
+		}
+	}
+	fclose(f);
 	return m;
 }
 
@@ -20,7 +28,7 @@ void matrixtofile(FILE *f, matrix_t *m)
 		{
 			fprintf(f, "%d ", m->m[r][c]);
 		}
-		fprintf(f, "\n\n");
+		fprintf(f, "\n");
 	}
 }
 
@@ -30,6 +38,7 @@ int savematrix(matrix_t *m)
 	if (f < 0) return -1;
 	fprintf(f, "%d %d\n", m->r, m->c);
 	matrixtofile(f, m);
+	fclose(f);
 	return 0;
 }
 
@@ -44,9 +53,9 @@ matrix_t *creatematrix(int r, int c)
 	if (m == NULL) return NULL;
 	m->r = r;
 	m->c = c;
-	char **ar  = (char **)malloc(sizeof(char *) * r);
+	int **ar  = (int **)malloc(sizeof(int *) * r);
 	if (ar == NULL) return NULL;
-	ar[0] = (char *)malloc(sizeof(char) * c * r);
+	ar[0] = (int *)malloc(sizeof(int) * c * r);
 	if (ar[0] == NULL) return NULL;
 	for (int i = 0; i < r; i++)
 	{
