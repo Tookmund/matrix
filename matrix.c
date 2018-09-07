@@ -35,7 +35,7 @@ void matrixtofile(FILE *f, matrix_t *m)
 int savematrix(matrix_t *m)
 {
 	FILE *f = fopen(MATRIXFILE, "w");
-	if (f < 0) return -1;
+	if (f == NULL) return -1;
 	fprintf(f, "%d %d\n", m->r, m->c);
 	matrixtofile(f, m);
 	fclose(f);
