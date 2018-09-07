@@ -1,4 +1,4 @@
-CFLAGS=-Wall -ggdb -Og
+CFLAGS=-Wall -O2 -pedantic
 
 all: replace swap scale newmatrix
 
