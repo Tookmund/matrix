@@ -14,9 +14,7 @@ int main(void)
 			scanf("%d", &(m->m[r][c]));
 		}
 	}
-	printmatrix(m);
 	savematrix(m);
-	freematrix(m);
 	return 0;
 }
 
