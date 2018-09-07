@@ -2,12 +2,13 @@
 
 int main(int argc, char **argv)
 {
-	matrix_t *m = loadmatrix();
 	if (argc < 3)
 	{
 		puts("swap [row] [row]");
 		return 1;
 	}
+	matrix_t *m = loadmatrix();
+	if (m == NULL) return 2;
 	int r1 = atoi(argv[1])-1;
 	int r2 = atoi(argv[2])-1;
 	int *row1 = m->m[r1];

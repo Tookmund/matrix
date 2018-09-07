@@ -5,7 +5,12 @@
 matrix_t *loadmatrix(void)
 {
 	FILE* f = fopen(MATRIXFILE, "r");
-	if (f == NULL) return NULL;
+	if (f == NULL)
+	{
+		puts("No current matrix found. Create one with newmatrix to get"
+				" started!");
+		return NULL;
+	}
 	int r, c;
 	fscanf(f, "%d %d", &r, &c);
 	matrix_t *m = creatematrix(r, c);

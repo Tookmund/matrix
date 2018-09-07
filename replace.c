@@ -2,12 +2,13 @@
 
 int main(int argc, char **argv)
 {
-	matrix_t *m = loadmatrix();
 	if (argc < 4)
 	{
 		puts("replace [row] [factor] [row to add]");
 		return 1;
 	}
+	matrix_t *m = loadmatrix();
+	if (m == NULL) return 2;
 	int row = atoi(argv[1])-1;
 	int factor = atoi(argv[2]);
 	int rowadd = atoi(argv[3])-1;
