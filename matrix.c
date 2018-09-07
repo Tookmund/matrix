@@ -39,6 +39,8 @@ int savematrix(matrix_t *m)
 	fprintf(f, "%d %d\n", m->r, m->c);
 	matrixtofile(f, m);
 	fclose(f);
+	printmatrix(m);
+	freematrix(m);
 	return 0;
 }
 

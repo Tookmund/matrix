@@ -19,6 +19,5 @@ int main(int argc, char **argv)
 		row2[i] = t;
 	}
 	savematrix(m);
-	freematrix(m);
 }
 
