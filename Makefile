@@ -1,4 +1,4 @@
-CFLAGS=-Wall -O2 -pedantic
+CFLAGS=-Wall -O2 -pedantic -std=c99
 
 all: replace swap scale newmatrix
 
